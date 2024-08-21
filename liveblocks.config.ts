@@ -1,3 +1,12 @@
+import {createClient} from '@liveblocks/client'
+import {createRoomContext} from '@liveblocks/react'
+
+
+{/* initalized a liveblocks client that will allow connection to LiveBlocks room "Dricma" */}
+const client  = createClient({
+  publicApiKey: process.env.NEXT_PUBLIC_LIVEBLOCKS_PUBLIC_KEY!,
+})
+
 // Define Liveblocks types for your application
 // https://liveblocks.io/docs/api-reference/liveblocks-react#Typing-your-data
 declare global {
