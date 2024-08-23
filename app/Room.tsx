@@ -7,11 +7,9 @@ import {
   ClientSideSuspense,
 } from "@liveblocks/react/suspense";
 
-import dotenv from 'dotenv';
-
 export function Room({ children }: { children: ReactNode }) {
   return (
-    <LiveblocksProvider publicApiKey={dotenv.NEXT_PUBLIC_LIVEBLOCKS_KEY}>
+    <LiveblocksProvider publicApiKey={process.env.NEXT_PUBLIC_LIVEBLOCKS_KEY!}>
       <RoomProvider id="my-room">
         <ClientSideSuspense fallback={<div>Loading…</div>}>
           {children}
